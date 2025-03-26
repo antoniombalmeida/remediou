@@ -316,11 +316,11 @@ nav ul .btn {
     padding: 20px;
 }
   
-  .descricao-texto {
-    max-width: 650px;
-    margin-left: 200px;
-    text-align: justify; /* <-- isso aqui alinha o texto dos dois lados */
-  }
+.descricao-texto {
+  max-width: 650px;
+  margin-left: 100px;
+  text-align: justify;
+}
   
   .descricao-texto h2 {
     font-size: 36px;
