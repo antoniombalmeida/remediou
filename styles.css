@@ -64,26 +64,29 @@ nav ul .btn {
 }
 
 .hero {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 80vh;
-    text-align: center;
-    background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 60px 80px;
+  background-color: #ffffff;
+  gap: 40px;
 }
+
 
 .content {
-    position: relative;
-    left: 120px; /* Ajuste conforme necessário */
+  flex: 1;
+  max-width: 600px;
+  text-align: left;
 }
-
 .content h1 {
-    font-size: 50px;
+  font-size: 50px;
+  margin-bottom: 20px;
 }
 
 .content p {
-    margin-top: 40px;
-    font-size: 20px;
+  font-size: 20px;
+  margin-top: 20px;
 }
 
 .register-btn {
@@ -162,11 +165,18 @@ nav ul .btn {
     opacity: 0.7;
 }
 
+
+.remedio {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .remedio img {
-    position: relative;
-    left: 90px;
-    width: 1200px;
-    height: 730px;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
 }
 
 .pessoa img {
@@ -292,21 +302,19 @@ nav ul .btn {
   }
 
   .descricao-section {
-    position: relative;
-    width: 100%;
-    background-color: #ffffff;
     display: flex;
-    min-height: 500px;
-    overflow: hidden;
-  }
-  
-  .descricao-content {
-    flex: 1;
-    display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    padding: 60px;
-    z-index: 2;
-  }
+    justify-content: space-between;
+    padding: 60px 20px;
+    background-color: #ffffff;
+}
+
+.descricao-content {
+    flex: 1;
+    min-width: 300px;
+    padding: 20px;
+}
   
   .descricao-texto {
     max-width: 650px;
@@ -338,19 +346,19 @@ nav ul .btn {
   
   /* Imagem colada na lateral direita, altura total */
   .descricao-imagem {
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 100%;
-    z-index: 1;
-  }
-  
-  .descricao-imagem img {
-    height: 100%;
-    width: auto;
-    object-fit: cover;
-    display: block;
-  }
+    flex: 1;
+    min-width: 300px;
+    height: auto;
+    position: static;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.descricao-imagem img {
+    max-width: 100%;
+    height: auto;
+}
   
 
 /* SEÇÃO EXTENSÃO */
@@ -530,5 +538,25 @@ nav ul .btn {
   .footer-creditos p {
     margin: 5px 0;
     color: #ccc;
+  }
+  
+  @media (max-width: 768px) {
+    .hero, .descricao-section {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .content, .descricao-texto {
+      margin-left: 0;
+      text-align: center;
+    }
+  
+    .descricao-texto h2 {
+      font-size: 28px;
+    }
+  
+    .descricao-texto p {
+      font-size: 18px;
+    }
   }
   
