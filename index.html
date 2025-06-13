@@ -1,190 +1,426 @@
 <!DOCTYPE html>
-<html lang="pt">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Startup Development</title>
-        <!-- Importação da fonte Poppins -->
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="styles.css">
-        <script src="script.js"></script>
-    </head>
-<body>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Remediou - Sua Saúde em Dia</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
 
-    <header>
-        <div class="logo">
-            <img src="images/logotipo.png" alt="Logo Remediou">
-            <h1>Remediou</h1>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* Configuração da fonte padrão para combinar com o exemplo */
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    /* Animação simples de fade-in */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .animate-fade-in-up {
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+  </style>
+
+</head>
+<body class="bg-white font-sans">
+
+  <header id="main-header" class="fixed w-full z-50 transition-all duration-300 bg-transparent">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center py-4">
+        <div class="flex items-center space-x-3">
+          <img src="images/logotipo.png" alt="Logo Remediou" class="h-10 w-10" />
+          <h1 class="text-2xl font-bold text-blue-600">Remediou</h1>
         </div>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#about">Sobre</a></li>
-                <li><a href="#relato">Origem</a></li>
-                <li><a href="#unifil-section">Referência</a></li>
-            </ul>
+        
+        <nav class="hidden md:flex space-x-8">
+          <a href="#" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">Home</a>
+          <a href="#about" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">Sobre</a>
+          <a href="#origin" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">Origem</a>
+          <a href="#reference" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">Referência</a>
         </nav>
-    </header>
 
-    <section class="hero">
-        <div class="content">
-            <h1>Mantenha sua Saúde em Dia com o <span class="highlight">Remediou</span></h1>
-            <p>O aplicativo que <strong>cuida</strong> de você, com lembretes <strong>inteligentes</strong> para medicamentos e consultas.</p>
+        <button id="mobile-menu-button" class="md:hidden">
+          <i data-lucide="menu" class="h-6 w-6"></i>
+        </button>
+      </div>
+    </div>
 
-        </div>
-        <div class="remedio">
-            <img src="images/remedios.png" alt="Remedio">
-        </div>
-    </section>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+      <div class="px-4 py-2 space-y-2">
+        <a href="#" class="block py-2 text-gray-700 hover:text-blue-600">Home</a>
+        <a href="#about" class="block py-2 text-gray-700 hover:text-blue-600">Sobre</a>
+        <a href="#origin" class="block py-2 text-gray-700 hover:text-blue-600">Origem</a>
+        <a href="#reference" class="block py-2 text-gray-700 hover:text-blue-600">Referência</a>
+      </div>
+    </div>
+  </header>
 
-    <section id="about" class="about">
-        <h2>SOBRE NÓS</h2>
-        <div class="team">
-            <div class="member">
-                <img src="images/antonio.jpeg" alt="Antonio M. Brito">
-                <p>Antonio M. Brito</p>
-                <h1>Engenharia de Software, 2024</h1>
-                <a href="https://github.com/antoniombalmeida" target="_blank">
-                    <img src="images/github.png" alt="GitHub">
-                </a>
+  <main>
+    <section class="h-screen flex items-center bg-gradient-to-br from-blue-50 via-white to-indigo-50 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div class="space-y-8 animate-fade-in-up">
+            <h1 class="text-4xl md:text-6xl font-bold text-gray-900 leading-tight">
+              Mantenha sua Saúde em Dia com o
+              <span class="text-blue-600 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+                Remediou
+              </span>
+            </h1>
+            <p class="text-xl text-gray-600 leading-relaxed">
+              O aplicativo que <strong class="text-gray-900">cuida</strong> de você, com lembretes
+              <strong class="text-gray-900">inteligentes</strong> para medicamentos e consultas.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <button class="bg-blue-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                Começar Agora
+              </button>
+              <a href="#origin" class="border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-xl font-semibold hover:bg-blue-600 hover:text-white transition-all duration-300 inline-block">
+                Saiba Mais
+              </a>
             </div>
-            <div class="member">
-                <img src="images/kikuchi.jpeg" alt="Gabriel Kikuchi">
-                <p>Gabriel Kikuchi</p>
-                <h1>Engenharia de Software, 2024</h1>
-                <a href="https://github.com/K1kuch1" target="_blank">
-                    <img src="images/github.png" alt="GitHub">
-                </a>
-            </div>
-            <div class="member">
-                <img src="images/murilo.jpeg" alt="Murilo Volante">
-                <p>Murilo Volante</p>
-                <h1>Engenharia de Software</h1>
-                <a href="https://github.com/MuriloVolante" target="_blank">
-                    <img src="images/github.png" alt="GitHub">
-                </a>
-            </div>
-            <div class="member">
-                <img src="images/seti.jpeg" alt="João Seti">
-                <p>João Seti</p>
-                <h1>Engenharia de Software, 2024</h1>
-                <a href="https://github.com/Joaormn7" target="_blank">
-                    <img src="images/github.png" alt="GitHub">
-                </a>
-            </div>
-            <div class="member">
-                <img src="images/william.jpeg" alt="João Seti">
-                <p>William Hatakeyama</p>
-                <h1>Engenharia de Software, 2024</h1>
-                <a href="https://github.com/WillHatakeyama" target="_blank">
-                    <img src="images/github.png" alt="GitHub">
-                </a>
-            </div>
-        </div>
-    </section>
-    <section id="relato" class="relato-dark">
-        <div class="relato-dark-wrapper">
-          <div class="relato-dark-col-esq">
-            <p class="relato-sub">DE ONDE SURGIU?</p>
-            <h2><span class="relato-azul">Remediou</span> nasceu de uma necessidade real</h2>
           </div>
-          <div class="relato-dark-col-dir">
-            <p>
-              <span class="relato-highlight-dark">João</span> sempre esquecia de tomar seus remédios na hora certa. Entre reuniões, tarefas diárias e a correria do dia a dia, manter a disciplina com seus medicamentos e lembrar das consultas médicas era um verdadeiro desafio.
-            </p>
-            <p>
-              Com <span class="relato-highlight-dark">lembretes inteligentes</span> e <span class="relato-highlight-dark">alertas personalizados</span>, o <strong>Remediou</strong> garante que João e milhares de pessoas tomem seus medicamentos no momento certo — e agora também <strong>agendem e acompanhem consultas</strong> com facilidade.
-            </p>
+          <div class="relative">
+            <div class="absolute inset-0 bg-gradient-to-r from-blue-400 to-indigo-500 rounded-3xl transform rotate-6 opacity-20"></div>
+            <img src="images/remedios.png" alt="Remedio" class="relative z-10 w-full max-w-md mx-auto drop-shadow-2xl"/>
           </div>
         </div>
-        <div class="relato-dark-metrics">
-          <div class="metric-item"><h3>290</h3><p>Medicamentos lembrados</p></div>
-          <div class="metric-item"><h3>100</h3><p>Consultas agendadas</p></div>
-          <div class="metric-item"><h3>29</h3><p>Usuários ativos</p></div>
+      </div>
+    </section>
+
+    <section class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Por que escolher o <strong class="text-blue-600">Remediou?</strong>
+          </h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            O aplicativo ideal para quem precisa manter o controle da saúde com praticidade e segurança.
+          </p>
         </div>
-      </section>
-      
-      
-    
-      
-    
-      <section id="descricao" class="descricao-section">
-        <div class="descricao-content">
-          <div class="descricao-texto">
-            <h2>Por que escolher o <strong>Remediou?</strong></h2>
-            <p>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+            <div class="text-blue-600 mb-4"><i data-lucide="clock" class="w-8 h-8"></i></div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-3">Lembretes Inteligentes</h3>
+            <p class="text-gray-600">Nunca mais esqueça de tomar seus medicamentos com nossos alertas personalizados</p>
+          </div>
+          <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+            <div class="text-blue-600 mb-4"><i data-lucide="calendar" class="w-8 h-8"></i></div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-3">Agendamento de Consultas</h3>
+            <p class="text-gray-600">Organize e acompanhe todas suas consultas médicas em um só lugar</p>
+          </div>
+          <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+            <div class="text-blue-600 mb-4"><i data-lucide="users" class="w-8 h-8"></i></div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-3">Acompanhamento Familiar</h3>
+            <p class="text-gray-600">Permita que familiares e cuidadores monitorem seu tratamento</p>
+          </div>
+          <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+            <div class="text-blue-600 mb-4"><i data-lucide="shield" class="w-8 h-8"></i></div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-3">Segurança e Privacidade</h3>
+            <p class="text-gray-600">Seus dados de saúde protegidos com a mais alta segurança</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">SOBRE NÓS</h2>
+          <p class="text-xl text-gray-600">Conheça a equipe por trás do Remediou</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8 justify-center">
+          <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 text-center">
+            <img src="images/antonio.jpeg" alt="Antonio M. Brito" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover border-4 border-blue-100" />
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Antonio M. Brito</h3>
+            <p class="text-sm text-gray-600 mb-4">Engenharia de Software, 2024</p>
+            <a href="https://github.com/antoniombalmeida" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-10 h-10 bg-gray-900 text-white rounded-full hover:bg-gray-700 transition-colors">
+              <i data-lucide="github" class="w-5 h-5"></i>
+            </a>
+          </div>
+          <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 text-center">
+            <img src="images/kikuchi.jpeg" alt="Gabriel Kikuchi" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover border-4 border-blue-100" />
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Gabriel Kikuchi</h3>
+            <p class="text-sm text-gray-600 mb-4">Engenharia de Software, 2024</p>
+            <a href="https://github.com/K1kuch1" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-10 h-10 bg-gray-900 text-white rounded-full hover:bg-gray-700 transition-colors">
+              <i data-lucide="github" class="w-5 h-5"></i>
+            </a>
+          </div>
+          <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 text-center">
+            <img src="images/murilo.jpeg" alt="Murilo Volante" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover border-4 border-blue-100" />
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Murilo Volante</h3>
+            <p class="text-sm text-gray-600 mb-4">Engenharia de Software, 2024</p>
+            <a href="https://github.com/MuriloVolante" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-10 h-10 bg-gray-900 text-white rounded-full hover:bg-gray-700 transition-colors">
+              <i data-lucide="github" class="w-5 h-5"></i>
+            </a>
+          </div>
+          <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 text-center">
+            <img src="images/seti.jpeg" alt="João Seti" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover border-4 border-blue-100" />
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">João Seti</h3>
+            <p class="text-sm text-gray-600 mb-4">Engenharia de Software, 2024</p>
+            <a href="https://github.com/Joaormn7" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-10 h-10 bg-gray-900 text-white rounded-full hover:bg-gray-700 transition-colors">
+              <i data-lucide="github" class="w-5 h-5"></i>
+            </a>
+          </div>
+          <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 text-center">
+            <img src="images/william.jpeg" alt="William Hatakeyama" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover border-4 border-blue-100" />
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">William Hatakeyama</h3>
+            <p class="text-sm text-gray-600 mb-4">Engenharia de Software, 2024</p>
+            <a href="https://github.com/Joaormn7" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-10 h-10 bg-gray-900 text-white rounded-full hover:bg-gray-700 transition-colors">
+              <i data-lucide="github" class="w-5 h-5"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="origin" class="py-20 bg-gray-900 text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
+          <div>
+            <p class="text-blue-400 font-semibold mb-4 uppercase tracking-wide">DE ONDE SURGIU?</p>
+            <h2 class="text-3xl md:text-4xl font-bold mb-8">
+              <span class="text-blue-400">Remediou</span> nasceu de uma necessidade real
+            </h2>
+          </div>
+          <div class="space-y-6">
+            <p class="text-gray-300 text-lg leading-relaxed">
+              <span class="text-blue-400 font-semibold">João</span> sempre esquecia de tomar seus remédios na hora certa.
+              Entre reuniões, tarefas diárias e a correria do dia a dia, manter a disciplina com seus medicamentos
+              e lembrar das consultas médicas era um verdadeiro desafio.
+            </p>
+            <p class="text-gray-300 text-lg leading-relaxed">
+              Com <span class="text-blue-400 font-semibold">lembretes inteligentes</span> e
+              <span class="text-blue-400 font-semibold">alertas personalizados</span>, o
+              <strong>Remediou</strong> garante que João e milhares de pessoas tomem seus medicamentos
+              no momento certo — e agora também <strong>agendem e acompanhem consultas</strong> com facilidade.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="text-center">
+            <h3 class="text-4xl md:text-5xl font-bold text-blue-400 mb-2">290</h3>
+            <p class="text-gray-300 text-lg">Medicamentos lembrados</p>
+          </div>
+          <div class="text-center">
+            <h3 class="text-4xl md:text-5xl font-bold text-blue-400 mb-2">100</h3>
+            <p class="text-gray-300 text-lg">Consultas agendadas</p>
+          </div>
+          <div class="text-center">
+            <h3 class="text-4xl md:text-5xl font-bold text-blue-400 mb-2">29</h3>
+            <p class="text-gray-300 text-lg">Usuários ativos</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div class="space-y-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900">
+              Por que escolher o <strong class="text-blue-600">Remediou?</strong>
+            </h2>
+            <p class="text-lg text-gray-600 leading-relaxed">
               O <strong>Remediou</strong> é o aplicativo ideal para quem precisa manter o controle da saúde com praticidade.
-              Com <span class="destaque">lembretes inteligentes</span> para medicamentos e <span class="destaque">agendamento de consultas</span>,
+              Com <span class="text-blue-600 font-semibold">lembretes inteligentes</span> para medicamentos e
+              <span class="text-blue-600 font-semibold">agendamento de consultas</span>,
               ele ajuda você a seguir seu tratamento corretamente e nunca mais esquecer um compromisso de saúde.
             </p>
-            <p>
-              Além disso, permite o <span class="destaque">acompanhamento por familiares e cuidadores</span>,
+            <p class="text-lg text-gray-600 leading-relaxed">
+              Além disso, permite o <span class="text-blue-600 font-semibold">acompanhamento por familiares e cuidadores</span>,
               garantindo mais segurança e bem-estar.
             </p>
           </div>
-        </div>
-        <div class="descricao-imagem">
-          <img src="images/arquivo4.png" alt="Aplicativo Remediou">
-        </div>
-      </section>
-      
-      <section id="extensao" class="extensao-cinza">
-        <div class="extensao-cinza-wrapper">
-          <div class="extensao-cinza-col-dir">
-            <div class="titulo-junto-texto">
-              <p class="relato-sub">EXTENSÃO CURRICULAR</p>
-              <h2><span class="relato-azul">Tecnologia</span> com propósito social</h2>
-            </div>
-            <p>
-              A <span class="relato-highlight-dark">extensão curricular</span> conecta o aprendizado teórico à prática real, possibilitando que estudantes desenvolvam soluções com impacto direto na sociedade.
-            </p>
-            <p>
-              Um exemplo é o desenvolvimento de um <span class="relato-highlight-dark">aplicativo de lembrete de medicação</span>, que utiliza conceitos de engenharia de software para ajudar pessoas no controle de seus medicamentos e consultas, promovendo bem-estar e responsabilidade social.
-            </p>
+          <div class="relative">
+            <div class="absolute inset-0 bg-gradient-to-r from-blue-400 to-indigo-500 rounded-3xl transform -rotate-6 opacity-20"></div>
+            <img src="images/arquivo4.png" alt="Aplicativo Remediou" class="relative z-10 w-full max-w-md mx-auto drop-shadow-2xl"/>
           </div>
         </div>
-      </section>
-      
-      
-      
+      </div>
+    </section>
 
-      <section class="unifil-section">
-        <div class="unifil-wrapper">
-          <div class="unifil-texto">
-            <h2>Referência ao Projeto de Extensão Vinculado</h2>
-            <p>
-              Este projeto de desenvolvimento de um aplicativo de lembrete de medicação está vinculado à disciplina de Extensão Curricular 2025, ministrada pela professora Tânia no 1º bimestre do curso de Engenharia de Software da Universidade Unifil.
-            </p>
-            <p>
-              O projeto reforça a aplicação prática dos conhecimentos adquiridos, conectando a teoria com a solução de problemas reais. Além disso, contribui para a formação acadêmica ao estimular o desenvolvimento de soluções tecnológicas com impacto social, alinhadas às necessidades do mercado e da comunidade.
-            </p>
-          </div>
-          <div class="unifil-logo grande">
-            <img src="images/logo-unifil.png" alt="Logo Unifil">
-          </div>
-        </div>
-      </section>
-      
-      <footer class="site-footer">
-        <div class="footer-container">
-          <div class="footer-logo">
-            <img src="images/logotipo.png" alt="Logo Remediou">
-          </div>
-          <div class="footer-links">
-            <a href="#">Home</a>
-            <a href="#about">Sobre</a>
-            <a href="#relato">Origem</a>
-            <a href="#unifil-section">Referência</a>
-          </div>
-          <div class="footer-creditos">
-            <p>&copy; 2025 Remediou. Todos os direitos reservados.</p>
-            <p>Desenvolvido por alunos de Engenharia de Software - Unifil</p>
-          </div>
-        </div>
-      </footer>
+    <section id="documents" class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        Documentação do Projeto
+      </h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        Para total transparência, disponibilizamos os documentos que norteiam o desenvolvimento do Remediou. Acesse os artefatos para uma visão aprofundada do projeto.
+      </p>
+    </div>
 
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
       
+      <a href="https://drive.google.com/file/d/1_f7f_DAQhoXMfSLvJc5WoTS8m5fP6S-p/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="block group bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 text-center">
+        <div class="flex justify-center mb-5">
+          <div class="text-blue-600 bg-blue-100 rounded-full p-4 transition-all duration-300 group-hover:bg-blue-600 group-hover:text-white">
+            <i data-lucide="file-text" class="w-8 h-8"></i>
+          </div>
+        </div>
+        <h3 class="text-xl font-semibold text-gray-900 mb-2">Caso de Uso</h3>
+        <p class="text-gray-600">Análise detalhada dos fluxos e cenários de interação dos usuários com o aplicativo.</p>
+      </a>
+
+      <a href="https://drive.google.com/file/d/1AN2Veutvf4gSAqo1DuHHF1SGMUL6Nb6h/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="block group bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 text-center">
+        <div class="flex justify-center mb-5">
+          <div class="text-blue-600 bg-blue-100 rounded-full p-4 transition-all duration-300 group-hover:bg-blue-600 group-hover:text-white">
+            <i data-lucide="book-check" class="w-8 h-8"></i>
+          </div>
+        </div>
+        <h3 class="text-xl font-semibold text-gray-900 mb-2">Documento de Visão</h3>
+        <p class="text-gray-600">Apresenta a visão geral, o escopo, os objetivos e as premissas do projeto.</p>
+      </a>
+
+      <a href="https://drive.google.com/drive/folders/1Qo6p3YkKiAkETofKUUPYcgh_XdDKDxr9?usp=drive_link" target="_blank" rel="noopener noreferrer" class="block group bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 text-center">
+        <div class="flex justify-center mb-5">
+          <div class="text-blue-600 bg-blue-100 rounded-full p-4 transition-all duration-300 group-hover:bg-blue-600 group-hover:text-white">
+            <i data-lucide="layout-dashboard" class="w-8 h-8"></i>
+          </div>
+        </div>
+      <h3 class="text-xl font-semibold text-gray-900 mb-2">Telas do MVP</h3>
+      <p class="text-gray-600">Protótipos e telas do aplicativo em seu estágio mínimo viável.</p>
+    </a>
+
+    </div>
+  </div>
+</section>
     
+    <section class="py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto text-center">
+          <p class="text-blue-600 font-semibold mb-4 uppercase tracking-wide">EXTENSÃO CURRICULAR</p>
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+            <span class="text-blue-600">Tecnologia</span> com propósito social
+          </h2>
+          <div class="space-y-6 text-lg text-gray-600 leading-relaxed">
+            <p>
+              A <span class="text-blue-600 font-semibold">extensão curricular</span> conecta o aprendizado teórico à prática real,
+              possibilitando que estudantes desenvolvam soluções com impacto direto na sociedade.
+            </p>
+            <p>
+              Um exemplo é o desenvolvimento de um <span class="text-blue-600 font-semibold">aplicativo de lembrete de medicação</span>,
+              que utiliza conceitos de engenharia de software para ajudar pessoas no controle de seus medicamentos e consultas,
+              promovendo bem-estar e responsabilidade social.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="reference" class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div class="space-y-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900">
+              Referência ao Projeto de Extensão Vinculado
+            </h2>
+            <p class="text-lg text-gray-600 leading-relaxed">
+              Este projeto de desenvolvimento de um aplicativo de lembrete de medicação está vinculado à disciplina de
+              Extensão Curricular, ministrada pela professora Tânia no 1º bimestre do curso de Engenharia de Software
+              da Universidade Unifil.
+            </p>
+            <p class="text-lg text-gray-600 leading-relaxed">
+              O projeto reforça a aplicação prática dos conhecimentos adquiridos, conectando a teoria com a solução de
+              problemas reais. Além disso, contribui para a formação acadêmica ao estimular o desenvolvimento de soluções
+              tecnológicas com impacto social, alinhadas às necessidades do mercado e da comunidade.
+            </p>
+          </div>
+          <div class="text-center">
+            <img src="images/logo-unifil.png" alt="Logo Unifil" class="w-full max-w-sm mx-auto"/>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <footer class="bg-gray-900 text-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-3 gap-8 mb-8 items-center">
+        <div class="flex items-center space-x-3">
+          <img src="images/logotipo.png" alt="Logo Remediou" class="h-10 w-10" />
+          <h3 class="text-2xl font-bold text-blue-400">Remediou</h3>
+        </div>
+        
+        <div class="flex flex-wrap gap-6 justify-center">
+          <a href="#" class="text-gray-300 hover:text-blue-400 transition-colors">Home</a>
+          <a href="#about" class="text-gray-300 hover:text-blue-400 transition-colors">Sobre</a>
+          <a href="#origin" class="text-gray-300 hover:text-blue-400 transition-colors">Origem</a>
+          <a href="#reference" class="text-gray-300 hover:text-blue-400 transition-colors">Referência</a>
+        </div>
+        
+        <div class="text-center md:text-right">
+          <p class="text-gray-400 mb-2">&copy; 2024 Remediou. Todos os direitos reservados.</p>
+          <p class="text-gray-400">Desenvolvido por alunos de Engenharia de Software - Unifil</p>
+        </div>
+      </div>
+      
+      <div class="border-t border-gray-800 pt-8 text-center">
+        <p class="text-gray-400 flex items-center justify-center gap-2">
+          Feito com <i data-lucide="heart" class="w-4 h-4 text-red-500 fill-current"></i> para cuidar da sua saúde
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      
+      // Inicializa os ícones da biblioteca Lucide
+      lucide.createIcons();
+
+      const mainHeader = document.getElementById('main-header');
+      const mobileMenuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+
+      // --- Lógica do Header que muda com o Scroll ---
+      const handleScroll = () => {
+        if (window.scrollY > 50) {
+          mainHeader.classList.add('bg-white/95', 'backdrop-blur-md', 'shadow-lg');
+          mainHeader.classList.remove('bg-transparent');
+        } else {
+          mainHeader.classList.remove('bg-white/95', 'backdrop-blur-md', 'shadow-lg');
+          mainHeader.classList.add('bg-transparent');
+        }
+      };
+
+      window.addEventListener('scroll', handleScroll);
+
+      // --- Lógica para abrir e fechar o Menu Móvel ---
+      let isMenuOpen = false;
+      mobileMenuButton.addEventListener('click', () => {
+        isMenuOpen = !isMenuOpen;
+        mobileMenu.classList.toggle('hidden');
+        
+        // Troca o ícone de 'menu' para 'x' e vice-versa
+        if (isMenuOpen) {
+          mobileMenuButton.innerHTML = '<i data-lucide="x" class="h-6 w-6"></i>';
+        } else {
+          mobileMenuButton.innerHTML = '<i data-lucide="menu" class="h-6 w-6"></i>';
+        }
+        // Recria o ícone após mudar o HTML
+        lucide.createIcons();
+      });
+
+    });
+  </script>
 
 </body>
 </html>
